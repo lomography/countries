@@ -26,5 +26,14 @@ module Countries
     def self.country_for_iso2(iso2)
       localized.detect { |country| iso2 == country[:iso2] }
     end
+
+    def self.country_name_for_iso3(iso3)
+      country = localized.detect { |country| iso3 == country[:iso3] }
+      country.nil? ? '' : country[:name]
+    end
+
+    def self.country_for_iso3(iso3)
+      localized.detect { |country| iso3 == country[:iso3] }
+    end
   end
 end
